@@ -1,10 +1,17 @@
 
-function doSomething() {
-    for (var i = 0; i < 5; i++) {
-        console.log(i);
+export class LikeComponent {
+    constructor(public likesCount: number, public isSelected: boolean) {
+
     }
 
-    console.log('Finally: ' + i);
+    onClick() {
+        if (this.isSelected) {
+            this.likesCount--;
+        } else {
+            this.likesCount++;
+        }
+        this.likesCount += (this.likesCount) ? -1 : +1;
+        
+        this.isSelected = !this.isSelected;
+    }
 }
-
-doSomething();
