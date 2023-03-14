@@ -1,16 +1,21 @@
 import { CoursesService } from './course/courses.service';
-
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'courses',
   template: `
     <div class="container">
-      <h2>{{ title }}</h2>
+      <h1>{{ title }}</h1>
       <img [src]="imageUrl" class="w-100"/>
-      <ul>
-        <li *ngFor="let course of courses">{{ course }}</li>
-      </ul>
+      <br/>
+      <br/>
+      <div class="card">
+        <ul class="list-group list-group-flush">
+          <li *ngFor="let course of courses" class="list-group-item">{{ course }}</li>
+        </ul>
+      </div>
+      <br/>
+      <br/>
       <table>
         <tr>
           <td [attr.colspan]="colSpan"></td>
